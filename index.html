@@ -368,7 +368,8 @@ L.latLng(28.265687,-82.673687),
                     var distance = getDistanceInMiles(mouseLatLng, targetLatLng);
 
                     // Update closestDistance and tooltipContent if this targetLatLng is closer
-                    if (distance < closestDistance) {
+                    const TOLERANCE = 0.1;
+                    if (distance < closestDistance - TOLERANCE) {
                         closestDistance = distance;
                         tooltipContent = distance + " Miles From Nearest ILP-informed Officer";
                     }
